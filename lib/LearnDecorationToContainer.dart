@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sized_box_for_whitespace
 import 'package:flutter/material.dart';
 
 void main() {
@@ -39,44 +39,34 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text('Flutter Container'),
+        title: Text('Dashboard'),
       ),
-    body: Column(
-      children: [
-        Expanded(
-          flex: 2,
-          child: Container(
-            
-            height: 100,
-            color: Colors.blue,
+    body: Container(
+      width: double.infinity,
+      height: double.infinity,
+      child: Center(
+        child: Container(
+          width: 150,
+          height: 150,
+          decoration: BoxDecoration(
+          color: Colors.blueGrey,
+          // borderRadius: BorderRadius.only(topLeft: Radius.circular(21),bottomRight: Radius.circular(21)),
+          border: Border.all(
+            width: 5,
+            color: Colors.black,
           ),
+          boxShadow: [
+            BoxShadow(
+              blurRadius: 51,
+              color: Colors.grey,
+              spreadRadius: 21,
+            )
+          ],
+          shape: BoxShape.rectangle,
         ),
-        Expanded(
-          flex: 4,
-          child: Container(
-           
-            height: 100,
-            color: Colors.orange,
-          ),
-        ),
-     Expanded(
-      flex: 2,
-      child: 
-        Container(
-          height: 100,
-          color: Colors.green,
-        ),),
-        Expanded(
-          flex: 1,
-          child: Container(
-           
-            height: 100,
-            color: Colors.pink,
-          ),
-        )
-
-      ],
+      ),
     ),
+    )
     );
   }
 }

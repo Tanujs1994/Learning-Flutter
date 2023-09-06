@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, avoid_print, avoid_unnecessary_containers
 import 'package:flutter/material.dart';
 
 void main() {
@@ -39,44 +39,37 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text('Flutter Container'),
+        title: Text('Hello'),
       ),
-    body: Column(
-      children: [
-        Expanded(
-          flex: 2,
-          child: Container(
-            
-            height: 100,
-            color: Colors.blue,
-          ),
-        ),
-        Expanded(
-          flex: 4,
-          child: Container(
-           
-            height: 100,
-            color: Colors.orange,
-          ),
-        ),
-     Expanded(
-      flex: 2,
-      child: 
-        Container(
-          height: 100,
-          color: Colors.green,
-        ),),
-        Expanded(
-          flex: 1,
-          child: Container(
-           
-            height: 100,
-            color: Colors.pink,
-          ),
-        )
+    body: Center(
+      child: InkWell(
+        onTap: (){
+          print("Tapped on Container");
+        },
+        child: Container(
+          height: 200,
+          width: 200,
+          color: const Color.fromRGBO(76, 175, 80, 1),
+          child: Center(
+            child: InkWell(
+              onTap: (){
+                print("Text Widget Rapped!");
+              },
 
-      ],
-    ),
+              child: Text(
+                'Click here',
+                style: TextStyle(fontSize:20,fontWeight: FontWeight.w700),))),
+        ),
+        onDoubleTap: (){
+          print("Double Tap on Container");
+
+        },
+        onLongPress: (){
+          print("Long Pressed on Container");
+
+        },
+      ),
+    )
     );
   }
 }
