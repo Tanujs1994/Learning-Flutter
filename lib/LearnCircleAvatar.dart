@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sort_child_properties_last
 import 'package:flutter/material.dart';
 
 void main() {
@@ -41,7 +41,26 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text('Flutter Container'),
       ),
-    body: TextField(),
+    body: Center(
+      child: CircleAvatar(
+          child: Container(
+            width: 50,
+            height: 50,
+            child: Column(
+              children: [
+                Container(
+                  width: 50,
+                  height: 20,
+                  child: Image.asset('assets/images/bird.png',)),
+                Text('Name')
+            ],
+            ),
+          ),
+        //  backgroundImage: AssetImage('assets/images/pic.jpg'),
+         backgroundColor: Color.fromARGB(255, 225, 130, 29),  
+        maxRadius: 50, 
+      ),
+    )
     );
   }
 }

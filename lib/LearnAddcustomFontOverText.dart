@@ -41,7 +41,10 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text('Flutter Container'),
       ),
-    body: TextField(),
+    body: Center(
+      child: Text (
+        'Hello world!',style: TextStyle(fontFamily: "FontMain",fontSize: 55,fontWeight: FontWeight.w500 ),),
+    ),
     );
   }
 }

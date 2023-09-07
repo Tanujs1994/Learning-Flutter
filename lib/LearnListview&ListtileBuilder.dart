@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 import 'package:flutter/material.dart';
 
 void main() {
@@ -36,12 +36,31 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+
+var arrNames = ['Raman','Ramanujan','Rajesh','James','john','Rahim','Ram','Seeta','Siya'];
+
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text('Flutter Container'),
+        title: Text('Hello'),
       ),
-    body: TextField(),
+    
+    body: ListView.separated(itemBuilder: (context, index){
+      return ListTile(
+        leading:Text('${index+1}') ,
+        title:Text(arrNames[index]) ,
+        subtitle:Text('Number') ,
+        trailing:Icon(Icons.add) ,
+      );
+
+    },
+    itemCount: arrNames.length,
+    separatorBuilder: (context, index){
+      return Divider(height: 20,thickness: 2,);
+    }
+    
+    ),
     );
   }
 }
