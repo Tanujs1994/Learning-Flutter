@@ -22,7 +22,7 @@ TextStyle mTextstyle21(){
 
 TextStyle mTextstyle16(){
   return TextStyle(
-    fontSize: 16
+    fontSize: 10
   );
 }
 

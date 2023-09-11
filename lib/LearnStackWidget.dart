@@ -41,7 +41,31 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text('Hello '),
       ),
-    body: Text('Hello World'),
+    body: Container(
+      width: 300,
+      height: 300,
+      child: Stack(
+        children: [
+          Container(
+            width: 200,
+            height: 200,
+            color: Colors.green,
+          ),
+    
+          Positioned(
+            left: 30,
+            top: 30,
+            right: 30,
+            bottom: 30,
+            child: Container(
+              width: 200,
+              height: 200,
+              color: Colors.blue,
+            ),
+          )
+        ],
+      ),
+    )
     );
   }
 }
