@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, use_key_in_widget_constructors
+// ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,40 +17,31 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: MyHomePage(),
+      home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  @override
-  State<StatefulWidget> createState() {
-   return _MyHomeState();
-  }
- 
+  const MyHomePage({super.key, required this.title});
 
-  
+  final String title;
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
 }
 
+class _MyHomePageState extends State<MyHomePage> {
+  
 
-class _MyHomeState extends  State <MyHomePage> {
-
-  var count = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: Text('Basic Calculations')),
-        backgroundColor: Colors.blue,
-
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        title: Text('Hello '),
       ),
-      body: Container(
-        color: Colors.blue.shade200,
-        child: Center(
-          
-        ),
-      ),
+    body: Text('Hello World'),
     );
- 
   }
 }
