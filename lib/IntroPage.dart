@@ -32,7 +32,7 @@ class IntroPage extends StatelessWidget {
           
           ));
           
-          }, child: Text('Next'),
+          }, child: Text('Back'),
            style: ElevatedButton.styleFrom(
               backgroundColor: Colors.orange
             )
